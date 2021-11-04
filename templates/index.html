@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER CR</title>
+</head>
+<body>
+    <h1>All Users</h1>
+    <thead>
+        <tr>ID</tr>
+        <tr>Full Name</tr>
+        <tr>Email</tr>
+        <tr>Created At</tr>
+    </thead>
+    <tbody>
+        {% for u in users %}
+        <tr>
+            <td>{{u.id}}</td>
+            <td>{{u.first_name}}{{u.last_name}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.created_at}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+    <a href="/createuser"">Add a User</a>
+</body>
+</html>
