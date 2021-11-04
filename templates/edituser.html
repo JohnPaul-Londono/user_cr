@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New User</title>
+    <title>Edit User</title>
 </head>
 <body>
 
-    <form action="/create" method="POST" >
-        <h2 >Add User</h2>
+    <form action="/update/{{u.id}}" method="POST" >
+        
+        <h2 >Edit User {{u.id}}</h2>
         <div>
             <label for="first_name">First Name:</label>
-            <input type="text" name="first_name">
+            <input type="text" name="first_name" value="{{u.first_name}}">
         </div>
         <div>
             <label for="last_name">Last Name:</label>
-            <input type="text" name="last_name">
+            <input type="text" name="last_name" value="{{u.last_name}}">
         </div>
         <div>
             <label for="email">Email:</label>
-            <input type="text" name="email">
+            <input type="text" name="email" value="{{u.email}}">
         </div>
+        <input  type="submit" value="Update">
         
-        <input  type="submit" value="Create"> 
-        
-        <!-- href="/shownewuser" -->
     </form>
+    <a href="/show/{{u.id}}"">Show User</a> |
     <a href="/homepage">Home</a>
 </body>
 </html>

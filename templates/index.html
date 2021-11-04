@@ -8,23 +8,25 @@
 </head>
 <body>
     <h1>All Users</h1>
-    <thead>
-        <tr>ID</tr>
-        <tr>Full Name</tr>
-        <tr>Email</tr>
-        <tr>Created At</tr>
-    </thead>
-    <tbody>
-        {% for u in users %}
+    <table width="750px">
         <tr>
-            <td>{{u.id}}</td>
-            <td>{{u.first_name}}{{u.last_name}}</td>
-            <td>{{u.email}}</td>
-            <td>{{u.created_at}}</td>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Created At</th>
+            <th>Actions</th>
         </tr>
-        {% endfor %}
-    </tbody>
+            {% for u in users %}
+            <tr>
+                <td>{{u.id}}</td>
+                <td>{{u.first_name}} {{u.last_name}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.created_at}}</td>
+                <td> <a href="/show/{{u.id}}">Show</a>  | <a href="/edit/{{u.id}}">Edit</a> | <a href="/delete/{{u.id}}">Delete</a></td>
+            </tr>
+            {% endfor %}
+    </table>
 
-    <a href="/createuser"">Add a User</a>
+    <a href="/createuser">Add a User</a>
 </body>
 </html>
